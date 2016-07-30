@@ -1,0 +1,29 @@
+{
+  "name": "ltl",
+  "version": "1.0.0",
+  "description": "LTL formula to Buchi automaton.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all jison build:tsc build:webpack",
+    "jison": "mkdirp ./dist && jison ./lib/ltl.jison -m commonjs -o ./dist/ltl.js",
+    "build:tsc": "tsc",
+    "build:webpack": "webpack",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:tsc": "tsc -w",
+    "watch:webpack": "webpack-dev-server"
+  },
+  "author": "Ryota Suzuki",
+  "license": "Unlicense",
+  "dependencies": {
+    "viz.js": "^1.3.0"
+  },
+  "devDependencies": {
+    "file-loader": "^0.9.0",
+    "jison": "^0.4.17",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^2.3.0",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

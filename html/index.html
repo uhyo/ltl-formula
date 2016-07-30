@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>LTL formula to Büchi automaton</title>
+    <script src="./bundle.js" type="text/javascript"></script>
+    <style>
+      .region {
+        background-color: #eeeeee;
+        padding: 1.6em;
+        margin: 1em;
+      }
+      .ltl-desc {
+        font-size: 0.9em;
+      }
+      .error {
+        color: red;
+        background-color: #ffffee;
+        padding: 1.2em;
+        margin: 1em;
+      }
+      .error:empty {
+        padding: 0;
+        margin: 0;
+      }
+      #ltl-formula {
+        width: 100%;
+        font-size: 1.2em;
+      }
+      #convert-button {
+        font-size: 2em;
+      }
+
+      .ltl-formula {
+        font-size: 1.6em;
+        font-family: serif;
+      }
+      i.ltl-op, i.ltl-constant, i.bfml-op, i.bfml-constant {
+        font-style: normal;
+      }
+      i.ltl-op-char {
+        font-style: normal;
+        font-weight: bold;
+      }
+      var.ltl-prop {
+        font-style: italic;
+      }
+
+      table.aba-table {
+        border-collapse: collapse;
+      }
+      table.aba-table td, table.aba-table th {
+        border: 1px solid black;
+        padding: 4px;
+      }
+      table.aba-table th {
+        font-weight: normal;
+        text-align: center;
+      }
+      img.graph {
+        width: 100%;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LTL formula → Büchi automaton</h1>
+    <p>Applied Logic. The final assignment - Question 3.</p>
+    <p><em>Notice</em>: All calculation will be done on your computer.</p>
+    <div class="region">
+      <p>Enter your LTL formula here:</p>
+      <p>
+        <input type="text" id="ltl-formula">
+      </p>
+      <p>
+        <input type="button" class="ltl-sample-button" value="sample input 1" data-sample="(NOT p) U (Xq)">
+        <input type="button" class="ltl-sample-button" value="sample input 2" data-sample="G(Fp->q)">
+        <input type="button" class="ltl-sample-button" value="sample input 3" data-sample="G(Fp->Xq)">
+      </p>
+      <div class="ltl-desc">
+        <p>You can use the following syntax:</p>
+        <ul>
+          <li>The constant <code>true</code> and <code>false</code>.</li>
+          <li>A word in <strong>lowercase</strong> alphabets for a <i>proposition</i>.</li>
+          <li><code>NOT</code>, <code>~</code> for the <i>NOT operator</i></li>
+          <li><code>AND</code>, <code>/\</code> for the <i>AND operator</i></li>
+          <li><code>OR</code>, <code>\/</code> for the <i>OR operator</i></li>
+          <li><code>-&gt;</code> for the <i>IMPLIES operator</i></li>
+          <li><code>X</code>, <code>F</code>, <code>G</code>, <code>U</code>, <code>R</code> for corresponding operators.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="region">
+      <p>
+        <input type="button" value="convert" id="convert-button">
+      </p>
+    </div>
+    <div class="error" id="error"></div>
+    <div id="result">
+    </div>
+  </body>
+</html>
+
