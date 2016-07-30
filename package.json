@@ -13,8 +13,8 @@
     "watch:tsc": "tsc -w",
     "watch:webpack": "webpack-dev-server"
   },
-  "author": "Ryota Suzuki",
-  "license": "Unlicense",
+  "author": "uhyo",
+  "license": "MIT",
   "dependencies": {
     "viz.js": "^1.3.0"
   },
