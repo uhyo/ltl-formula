@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all jison build:tsc build:webpack",
+    "github-publish": "git subtree push --prefix=dist-web origin gh-pages",
     "jison": "mkdirp ./dist && jison ./lib/ltl.jison -m commonjs -o ./dist/ltl.js",
     "build:tsc": "tsc",
     "build:webpack": "webpack",
